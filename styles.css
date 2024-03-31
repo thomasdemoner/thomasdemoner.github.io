@@ -1,0 +1,360 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* CUSTOM PROPERTIES */
+
+:root {
+	--font-primary: "Helvetica Nueue", ui-sans-serif, system-ui;
+	--font-weight-regular: 300;
+
+	--color-light: #fff;
+	--color-dark: #000;
+	--color-accent: rgb(255, 214, 0);
+
+	--font-size-h1: 3rem;
+	--font-size-h2: 2.5rem;
+	--font-size-h3: 1.5rem;
+	--font-size-body: 1rem;
+}
+
+@media (min-width: 900px) {
+	:root {
+		--font-size-h1: 3.5rem;
+		--font-size-h2: 3.5rem;
+		--font-size-h3: 2.5rem;
+		--font-size-body: 1.25rem;
+	}
+}
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* GENERAL STYLES */
+
+body {
+	font-family: var(--font-primary);
+	font-weight: var(--font-weight-regular);
+	font-size: var(--font-size-body);
+	color: var(--color-light);
+	line-height: 1.5;
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
+	background: var(--color-dark);
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* GENERAL TYPOGRAPHY */
+
+h1,
+h2,
+h3 {
+	margin: 0;
+}
+
+h1 {
+	font-size: var(--font-size-h1);
+}
+
+h2 {
+	font-size: var(--font-size-h2);
+}
+
+h3 {
+	font-size: var(--font-size-h3);
+}
+
+.section__title {
+}
+
+.section__subtitle {
+	/* margin: 0;
+	font-size: var(--font-size-h3); */
+}
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+
+section {
+	padding: 2em;
+}
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* HEADER */
+header {
+	background: white;
+	display: flex;
+	justify-content: space-between;
+	padding: 0.5rem 1rem;
+}
+
+.logo {
+	/* max-height: 2em; */
+	max-width: 60px;
+}
+
+.logo img {
+	/* max-height: 2em; */
+}
+
+.nav {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+
+	transform: translateX(100%);
+	transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+.nav__list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background: rgb(69, 69, 69);
+	color: var(--color-light);
+}
+
+.nav__link {
+	color: var(--color-light);
+	font-size: var(--font-size-h3);
+	text-decoration: none;
+}
+
+.nav__link:hover {
+	color: var(--color-accent);
+}
+
+.nav-toggle {
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	position: absolute;
+	top: 1rem;
+	right: 0;
+	z-index: 101;
+	color: var(--color-dark);
+}
+
+.nav-open .nav {
+	transform: translateX(0);
+}
+
+.nav-open .nav-toggle {
+	position: fixed;
+	color: var(--color-light);
+}
+
+.hamburger {
+	font-size: var(--font-size-h3);
+	width: 2em;
+	display: block;
+	position: relative;
+}
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* INTRO CUSTOMS */
+
+.intro {
+	position: relative;
+	margin: 0;
+	padding: 5% 10%;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.intro_title_subtitle {
+	text-align: center;
+}
+.intro_image {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.section__title_intro {
+	font-weight: 200;
+	strong {
+		font-weight: 800;
+		display: block;
+	}
+}
+
+.section__subtitle_intro {
+	/* background: gray; */
+	/* https://developer.mozilla.org/en-US/docs/Web/CSS/align-self */
+	align-self: start;
+	/* padding: 0 0.5em; */
+	color: var(--color-light);
+}
+
+.prof-pic {
+	/* display: block; */
+	border-radius: 50%;
+	width: 100%;
+	padding: 1rem;
+	height: auto;
+	min-width: 200px;
+}
+
+@media (min-width: 800px) {
+	.intro {
+		display: flex;
+	}
+	.intro_title_subtitle {
+		min-width: 70%;
+		text-align: start;
+	}
+	.intro_image {
+		width: 30%;
+	}
+}
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* GALLERY CUSTOMS */
+
+.gallery {
+	text-align: center;
+}
+
+.portfolio {
+	width: 100%;
+}
+
+.portfolio__item {
+	display: block;
+	max-width: 300px;
+	margin: 1rem auto;
+}
+.portfolio__image {
+	width: 100%;
+}
+
+@media (min-width: 800px) {
+	.portfolio {
+		display: flex;
+		text-align: center;
+		/* justify-content: space-between; */
+		margin: 0 auto;
+	}
+	.portfolio__item {
+		margin: 1rem auto;
+		width: auto;
+		max-width: 400px;
+	}
+}
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* SERVICES CUSTOMS */
+
+.services {
+	color: var(--color-light);
+	text-align: center;
+}
+
+.section__title_services {
+	position: relative;
+}
+
+.section__title_services::after {
+	content: "";
+	display: block;
+	width: 3em;
+	height: 3px;
+	margin: 0 auto 1rem;
+	background: var(--color-accent);
+}
+
+/* The below fucks with the text-align center or margin auto for left and right, the service items div no longer is centered along with the title of the section */
+.service-item {
+	/* max-width: 500px; */
+	/* border-left: 1px solid gray;
+	border-right: 1px solid gray; */
+	/* margin: 1rem; */
+	padding: 1rem;
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+/* @media (min-width: 1000px) {
+	.services-menu {
+		display: flex;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+	.service-item + .service-item {
+		margin-left: 1em;
+	}
+} */
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ABOUT ME CUSTOMS */
+
+.about {
+	p {
+		padding: 1em 0;
+	}
+
+	max-width: 900px;
+	margin: 0 auto;
+	padding-bottom: 10%;
+}
+
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* ------------------------------------------------------ */
+/* FOOTER CUSTOMS */
+footer {
+	background: var(--color-light);
+	text-align: center;
+	padding: 1rem 0;
+	color: var(--color-dark);
+}
+
+.social-list {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	padding: 0;
+}
+
+.social-list__item-link {
+	font-size: var(--font-size-h3);
+	margin: 0 0.5em;
+}
