@@ -114,10 +114,6 @@ header {
 	max-width: 60px;
 }
 
-.logo img {
-	/* max-height: 2em; */
-}
-
 .nav {
 	position: fixed;
 	top: 0;
